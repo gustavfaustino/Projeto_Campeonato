@@ -3,7 +3,7 @@ package classes;
 public class Atleta extends Pessoa {
    private String pais;
    private double tempo;
-   public Atleta(String nome, char Sexo){
+   public Atleta(String nome, String Sexo){
        super.setNome(nome);
        super.setSexo(Sexo);
    }

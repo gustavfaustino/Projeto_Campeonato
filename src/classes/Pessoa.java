@@ -2,7 +2,7 @@ package classes;
 
 public class Pessoa {
     private String nome;
-    private char sexo;
+    private String sexo;
 
     public String getNome() {
         return nome;
@@ -12,11 +12,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
