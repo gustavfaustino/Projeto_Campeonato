@@ -5,16 +5,18 @@ import java.util.List;
 import java.util.Stack;
 
 public class Campeonato24 extends javax.swing.JFrame {
-    
+
     // Criação da pilha e fila
     private Stack pilha = new Stack();
     private Queue fila = new Queue();
     private ArrayList array = new ArrayList();
-        
+
     public Campeonato24() {
         initComponents();
-        
+        cadastrarDadosIniciais();
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -267,49 +269,88 @@ public class Campeonato24 extends javax.swing.JFrame {
     private void radioMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMascActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radioMascActionPerformed
+    public void cadastrarDadosIniciais() {
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Atleta a1 = new Atleta("Laura Stewart", "USA", "Feminino", 10.65f);
+
+        Atleta a2 = new Atleta("Francesco Laurentis", "Itália", "Masculino", 10.98f);
+
+        Atleta a3 = new Atleta("Lívia Alves", "Brasil", "Feminino", 11.32f);
+
+        Atleta a4 = new Atleta("Marcos Silva", "Brasil", "Masculino", 9.98f);
+
+        Atleta a5 = new Atleta("Fernando Sotomayor", "Cuba", "Masculino", 11.42f);
+
+        Atleta a6 = new Atleta("Miley Marley", "Jamaica", "Feminino", 10.58f);
+
+        Atleta a7 = new Atleta("Pierre Depardiu", "França", "Masculino", 11.78f);
+
+        Atleta a8 = new Atleta("Renata Medeiros", "Portugal", "Feminino", 12.14f);
+
+        //agora, adicionar aqui os atletas anteriores nas estruturas 
+        //de dados utilizadas neste projeto:
+        array.add(a1+"\r\n");
+        array.add(a2+"\r\n");
+        array.add(a3+"\r\n");
+        array.add(a4+"\r\n");
+        array.add(a5+"\r\n");
+        array.add(a6+"\r\n");
+        array.add(a7+"\r\n");
+        array.add(a8+"\r\n");
         
+        pilha.push(a8);
+        pilha.push(a6);
+        pilha.push(a3);
+        pilha.push(a1);
+        
+        fila.enqueue(a2);
+        fila.enqueue(a4);
+        fila.enqueue(a5);
+        fila.enqueue(a7);
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         // Botão CADASTRAR
-        String nome, pais, sexo; double tempo;
+        String nome, pais, sexo;
+        double tempo;
         nome = jTextField1.getText();
         pais = jTextField2.getText();
-        if (radioMasc.isSelected()){
+        if (radioMasc.isSelected()) {
             sexo = "Masculino";
         } else {
-            sexo = "Feminino";}
-        tempo = Double.parseDouble(jTextField3.getText()); 
-         
-         
+            sexo = "Feminino";
+        }
+        tempo = Double.parseDouble(jTextField3.getText());
+
         //Instânciamento
         Atleta atletas = new Atleta(nome, sexo, pais, tempo);
-       
+
         // TODO fazer a lógica de guardar os dados e etc
         // Geral:
-        
         array.add(atletas);
-        array.add("\n\r");
+        array.add("\r\n");
 
-        
         // Mulher:
-        if(radioFem.isSelected()) pilha.push(atletas);
-        
+        if (radioFem.isSelected()) {
+            pilha.push(atletas);
+        }
+
         //Homem:
-        if(radioMasc.isSelected()) fila.enqueue(atletas);
-       
+        if (radioMasc.isSelected()) {
+            fila.enqueue(atletas);
+        }
+
         //Limpa dos TextFields
         jTextField1.setText("");
         jTextField2.setText("");
         buttonGroup1.clearSelection();
         jTextField3.setText("");
-               
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         // Botão LISTAR CADASTRO
-        
         jTextArea1.setText(array.toString());
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -327,7 +368,7 @@ public class Campeonato24 extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // Botão AUTORES
-        
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -355,8 +396,8 @@ public class Campeonato24 extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        
-         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
@@ -382,10 +423,10 @@ public class Campeonato24 extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Campeonato24().setVisible(true);
-                
+
             }
         });
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
