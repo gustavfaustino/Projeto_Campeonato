@@ -377,7 +377,8 @@ public class Campeonato24 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Melhor tempo mulher:\n" + melhorTempo.toString());
             } else {
                 JOptionPane.showMessageDialog(null, "Nenhuma atleta do sexo feminino cadastrada.");
-            }}
+            }
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -415,6 +416,29 @@ public class Campeonato24 extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //Media HOMENS
+        Queue temp = new Queue();
+        float somaTemposHomens = 0;
+        int totalHomens = 0;
+
+        while (!fila.isEmpty()) {
+            Atleta atleta = (Atleta) fila.dequeue();
+            temp.enqueue(atleta);
+            if (atleta.getSexo().equals("Masculino")) {
+                somaTemposHomens += atleta.getTempo();
+                totalHomens++;
+            }
+        }
+
+        while (!temp.isEmpty()) {
+            fila.enqueue(temp.dequeue());
+        }
+
+        if (totalHomens > 0) {
+            float mediaHomens = somaTemposHomens / totalHomens;
+            JOptionPane.showMessageDialog(this, "Média do Tempo dos Homens: " + mediaHomens + " segundos.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Não há homens cadastrados para calcular a média.");
+        }
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -437,25 +461,25 @@ public class Campeonato24 extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // Botão RETIRAR DA PILHA
         if (!pilha.isEmpty()) {
-        Atleta atletaRemovido = (Atleta) pilha.pop(); // Remove o objeto do topo da pilha
+            Atleta atletaRemovido = (Atleta) pilha.pop(); // Remove o objeto do topo da pilha
 
-        // Exibe uma mensagem com os dados do atleta removido
-        JOptionPane.showMessageDialog(this, "Atleta removido da pilha:\n" + atletaRemovido.toString());
-    } else {
-        JOptionPane.showMessageDialog(this, "A pilha está vazia, não é possível remover nenhum atleta.");
-    }   
+            // Exibe uma mensagem com os dados do atleta removido
+            JOptionPane.showMessageDialog(this, "Atleta removido da pilha:\n" + atletaRemovido.toString());
+        } else {
+            JOptionPane.showMessageDialog(this, "A pilha está vazia, não é possível remover nenhum atleta.");
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // Botão RETIRAR DA FILA
         if (!fila.isEmpty()) {
-        Atleta atletaRemovido = (Atleta) fila.dequeue(); // Remove o objeto do topo da fila
+            Atleta atletaRemovido = (Atleta) fila.dequeue(); // Remove o objeto do topo da fila
 
-        // Exibe uma mensagem com os dados do atleta removido
-        JOptionPane.showMessageDialog(this, "Atleta removido da fila:\n" + atletaRemovido.toString());
-    } else {
-        JOptionPane.showMessageDialog(this, "A fila está vazia, não é possível remover nenhum atleta.");
-    }        
+            // Exibe uma mensagem com os dados do atleta removido
+            JOptionPane.showMessageDialog(this, "Atleta removido da fila:\n" + atletaRemovido.toString());
+        } else {
+            JOptionPane.showMessageDialog(this, "A fila está vazia, não é possível remover nenhum atleta.");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void radioFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemActionPerformed
