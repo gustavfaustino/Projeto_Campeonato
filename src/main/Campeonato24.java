@@ -356,11 +356,33 @@ public class Campeonato24 extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Botão MELHOR TEMPO MULHER
+        if (!pilha.isEmpty()) {
+            Atleta melhorTempo = null;
+
+            // Inicializa o melhor tempo com o primeiro elemento da pilha
+            melhorTempo = (Atleta) pilha.peek();
+
+            // Percorre a pilha para encontrar o melhor tempo
+            for (Object objeto : pilha) {
+                if (objeto instanceof Atleta) {
+                    Atleta atleta = (Atleta) objeto;
+                    if (atleta.getSexo().equals("Feminino") && atleta.getTempo() < melhorTempo.getTempo()) {
+                        melhorTempo = atleta;
+                    }
+                }
+            }
+
+            // Exibe o melhor tempo
+            if (melhorTempo != null) {
+                JOptionPane.showMessageDialog(null, "Melhor tempo mulher:\n" + melhorTempo.toString());
+            } else {
+                JOptionPane.showMessageDialog(null, "Nenhuma atleta do sexo feminino cadastrada.");
+            }}
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Botão MEDIA GERAL
-        float somaTempos = 0; // Inicializa a soma dos tempos
+        double somaTempos = 0; // Inicializa a soma dos tempos
         int totalAtletas = 0;// Inicializa o contador de atletas
 
 // Verifica se a lista de atletas não está vazia
@@ -377,7 +399,7 @@ public class Campeonato24 extends javax.swing.JFrame {
 
             // Se houver atletas, calcula a média geral
             if (totalAtletas > 0) {
-                float mediaGeral = somaTempos / totalAtletas; // Calcula a média geral
+                double mediaGeral = somaTempos / totalAtletas; // Calcula a média geral
                 // Exibe a média geral em uma caixa de diálogo
                 JOptionPane.showMessageDialog(this, "Média Geral de Tempos: " + mediaGeral + " segundos.");
             } else {
@@ -392,7 +414,7 @@ public class Campeonato24 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Botão MEDIA HOMENS
+        //Media HOMENS
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -409,14 +431,31 @@ public class Campeonato24 extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // Botão MOSTRAR FILA
+        jTextArea1.setText(fila.toString());
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // Botão RETIRAR DA PILHA
+        if (!pilha.isEmpty()) {
+        Atleta atletaRemovido = (Atleta) pilha.pop(); // Remove o objeto do topo da pilha
+
+        // Exibe uma mensagem com os dados do atleta removido
+        JOptionPane.showMessageDialog(this, "Atleta removido da pilha:\n" + atletaRemovido.toString());
+    } else {
+        JOptionPane.showMessageDialog(this, "A pilha está vazia, não é possível remover nenhum atleta.");
+    }   
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // Botão RETIRAR DA FILA
+        if (!fila.isEmpty()) {
+        Atleta atletaRemovido = (Atleta) fila.dequeue(); // Remove o objeto do topo da fila
+
+        // Exibe uma mensagem com os dados do atleta removido
+        JOptionPane.showMessageDialog(this, "Atleta removido da fila:\n" + atletaRemovido.toString());
+    } else {
+        JOptionPane.showMessageDialog(this, "A fila está vazia, não é possível remover nenhum atleta.");
+    }        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void radioFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemActionPerformed
