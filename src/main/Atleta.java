@@ -29,7 +29,7 @@ public class Atleta extends Pessoa {
 
     @Override
     public String toString() {
-        return "Atleta{ " + "nome=" + super.getNome() + ", sexo=" + super.getSexo() + ", pais=" + pais + ", tempo=" + tempo + '}';
+        return "Atleta{ " + "nome=" + super.getNome() + ", sexo=" + super.getSexo() + ", pais=" + pais + ", tempo=" + tempo + "}\n";
     }
     
     
