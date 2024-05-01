@@ -329,7 +329,6 @@ public class Campeonato24 extends javax.swing.JFrame {
         // TODO fazer a lógica de guardar os dados e etc
         // Geral:
         array.add(atletas);
-        array.add("\r\n");
 
         // Mulher:
         if (radioFem.isSelected()) {
@@ -361,10 +360,6 @@ public class Campeonato24 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Botão MEDIA GERAL
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // Botão MEDIA HOMENS
         float somaTempos = 0; // Inicializa a soma dos tempos
         int totalAtletas = 0;// Inicializa o contador de atletas
 
@@ -393,6 +388,11 @@ public class Campeonato24 extends javax.swing.JFrame {
             // Se a lista de atletas estiver vazia, exibe uma mensagem informando que a lista está vazia
             JOptionPane.showMessageDialog(this, "A lista de atletas está vazia.");
         }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // Botão MEDIA HOMENS
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
