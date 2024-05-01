@@ -272,21 +272,21 @@ public class Campeonato24 extends javax.swing.JFrame {
     }//GEN-LAST:event_radioMascActionPerformed
     public void cadastrarDadosIniciais() {
 
-        Atleta a1 = new Atleta("Laura Stewart", "USA", "Feminino", 10.65f);
+        Atleta a1 = new Atleta("Laura Stewart", "Feminino", "USA", 10.65f);
 
-        Atleta a2 = new Atleta("Francesco Laurentis", "Itália", "Masculino", 10.98f);
+        Atleta a2 = new Atleta("Francesco Laurentis", "Masculino", "Itália", 10.98f);
 
-        Atleta a3 = new Atleta("Lívia Alves", "Brasil", "Feminino", 11.32f);
+        Atleta a3 = new Atleta("Lívia Alves", "Feminino", "Brasil", 11.32f);
 
-        Atleta a4 = new Atleta("Marcos Silva", "Brasil", "Masculino", 9.98f);
+        Atleta a4 = new Atleta("Marcos Silva", "Masculino", "Brasil", 9.98f);
 
-        Atleta a5 = new Atleta("Fernando Sotomayor", "Cuba", "Masculino", 11.42f);
+        Atleta a5 = new Atleta("Fernando Sotomayor", "Masculino", "Cuba", 11.42f);
 
-        Atleta a6 = new Atleta("Miley Marley", "Jamaica", "Feminino", 10.58f);
+        Atleta a6 = new Atleta("Miley Marley", "Feminino", "Jamaica", 10.58f);
 
-        Atleta a7 = new Atleta("Pierre Depardiu", "França", "Masculino", 11.78f);
+        Atleta a7 = new Atleta("Pierre Depardiu", "Masculino", "França", 11.78f);
 
-        Atleta a8 = new Atleta("Renata Medeiros", "Portugal", "Feminino", 12.14f);
+        Atleta a8 = new Atleta("Renata Medeiros", "Feminino", "Portugal", 12.14f);
 
         //agora, adicionar aqui os atletas anteriores nas estruturas 
         //de dados utilizadas neste projeto:
