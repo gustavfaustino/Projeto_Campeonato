@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import javax.swing.JOptionPane;
+/*
+autores: @gustavo_gabriel, @guilherme_guimaraes, @leonardo_zuzi,
+        @maria_eduarda
 
+*/
 public class Campeonato24 extends javax.swing.JFrame {
 
     // Criação da pilha e fila
@@ -374,9 +378,9 @@ public class Campeonato24 extends javax.swing.JFrame {
 
             // Exibe o melhor tempo
             if (melhorTempo != null) {
-                JOptionPane.showMessageDialog(null, "Melhor tempo mulher:\n" + melhorTempo.toString());
+                jTextArea1.setText("Melhor tempo mulher:\n" + melhorTempo.toString());
             } else {
-                JOptionPane.showMessageDialog(null, "Nenhuma atleta do sexo feminino cadastrada.");
+                jTextArea1.setText("Nenhuma atleta do sexo feminino cadastrada.");
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -405,11 +409,11 @@ public class Campeonato24 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Média Geral de Tempos: " + mediaGeral + " segundos.");
             } else {
                 // Se não houver atletas, exibe uma mensagem informando que não há atletas cadastrados
-                JOptionPane.showMessageDialog(this, "Não há atletas cadastrados para calcular a média.");
+                jTextArea1.setText("Não há atletas cadastrados para calcular a média.");
             }
         } else {
             // Se a lista de atletas estiver vazia, exibe uma mensagem informando que a lista está vazia
-            JOptionPane.showMessageDialog(this, "A lista de atletas está vazia.");
+            jTextArea1.setText("A lista de atletas está vazia.");
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -435,9 +439,9 @@ public class Campeonato24 extends javax.swing.JFrame {
 
         if (totalHomens > 0) {
             float mediaHomens = somaTemposHomens / totalHomens;
-            JOptionPane.showMessageDialog(this, "Média do Tempo dos Homens: " + mediaHomens + " segundos.");
+            jTextArea1.setText("Média do Tempo dos Homens: " + mediaHomens + " segundos.");
         } else {
-            JOptionPane.showMessageDialog(this, "Não há homens cadastrados para calcular a média.");
+            jTextArea1.setText("Não há homens cadastrados para calcular a média.");
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -464,9 +468,9 @@ public class Campeonato24 extends javax.swing.JFrame {
             Atleta atletaRemovido = (Atleta) pilha.pop(); // Remove o objeto do topo da pilha
 
             // Exibe uma mensagem com os dados do atleta removido
-            JOptionPane.showMessageDialog(this, "Atleta removido da pilha:\n" + atletaRemovido.toString());
+            jTextArea1.setText("Atleta removido da pilha:\n" + atletaRemovido.toString());
         } else {
-            JOptionPane.showMessageDialog(this, "A pilha está vazia, não é possível remover nenhum atleta.");
+            jTextArea1.setText("A pilha está vazia, não é possível remover nenhum atleta.");
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -476,9 +480,9 @@ public class Campeonato24 extends javax.swing.JFrame {
             Atleta atletaRemovido = (Atleta) fila.dequeue(); // Remove o objeto do topo da fila
 
             // Exibe uma mensagem com os dados do atleta removido
-            JOptionPane.showMessageDialog(this, "Atleta removido da fila:\n" + atletaRemovido.toString());
+            jTextArea1.setText("Atleta removido da fila:\n" + atletaRemovido.toString());
         } else {
-            JOptionPane.showMessageDialog(this, "A fila está vazia, não é possível remover nenhum atleta.");
+            jTextArea1.setText("A fila está vazia, não é possível remover nenhum atleta.");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
