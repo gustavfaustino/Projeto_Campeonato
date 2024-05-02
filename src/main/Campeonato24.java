@@ -406,14 +406,11 @@ public class Campeonato24 extends javax.swing.JFrame {
             if (totalAtletas > 0) {
                 double mediaGeral = somaTempos / totalAtletas; // Calcula a média geral
                 // Exibe a média geral em uma caixa de diálogo
-                JOptionPane.showMessageDialog(this, "Média Geral de Tempos: " + mediaGeral + " segundos.");
+                 jTextArea1.setText("Média Geral de Tempos: " + mediaGeral + " segundos.");
             } else {
                 // Se não houver atletas, exibe uma mensagem informando que não há atletas cadastrados
                 jTextArea1.setText("Não há atletas cadastrados para calcular a média.");
             }
-        } else {
-            // Se a lista de atletas estiver vazia, exibe uma mensagem informando que a lista está vazia
-            jTextArea1.setText("A lista de atletas está vazia.");
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -450,6 +447,8 @@ public class Campeonato24 extends javax.swing.JFrame {
         // Botão AUTORES
         Autores autores = new Autores();
         autores.setVisible(true);
+        autores.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
