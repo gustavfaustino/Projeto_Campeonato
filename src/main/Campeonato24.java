@@ -424,7 +424,7 @@ public class Campeonato24 extends javax.swing.JFrame {
         while (!fila.isEmpty()) {
             Atleta atleta = (Atleta) fila.dequeue();
             temp.enqueue(atleta);
-            if (atleta.getSexo().equals("Masculino")) {
+            if (atleta.getSexo().equals("Masculino") && atleta.getPais().matches("Brasil|brasil|Br|br|Brazil|brasil")) {
                 somaTemposHomens += atleta.getTempo();
                 totalHomens++;
             }
@@ -436,9 +436,9 @@ public class Campeonato24 extends javax.swing.JFrame {
 
         if (totalHomens > 0) {
             float mediaHomens = somaTemposHomens / totalHomens;
-            jTextArea1.setText("Média do Tempo dos Homens: " + mediaHomens + " segundos.");
+            jTextArea1.setText("Média do Tempo dos Homens brasileiros: " + mediaHomens + " segundos.");
         } else {
-            jTextArea1.setText("Não há homens cadastrados para calcular a média.");
+            jTextArea1.setText("Não há homens brasileiros cadastrados para calcular a média.");
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed
